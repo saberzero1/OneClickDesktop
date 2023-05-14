@@ -19,8 +19,8 @@
 #You can change the Guacamole source file download link here.
 #Check https://guacamole.apache.org/releases/ for the latest stable version.
 
-GUACAMOLE_DOWNLOAD_LINK="https://github.com/apache/guacamole-server/archive/refs/tags/1.5.1.tar.gz"
-GUACAMOLE_VERSION="1.5.1"
+GUACAMOLE_DOWNLOAD_LINK="https://github.com/apache/guacamole-server/archive/refs/tags/1.2.0.tar.gz"
+GUACAMOLE_VERSION="1.2.0"
 
 #By default, this script only works on Ubuntu 18/20, Debian 10, and CentOS 7/8.
 #You can disable the OS check switch below and tweak the code yourself to try to install it in other OS versions.
@@ -234,6 +234,7 @@ function install_guacamole_ubuntu_debian
 		apt-get install libjpeg-turbo8-dev language-pack-ja language-pack-zh* language-pack-ko -y
 	fi
 	wget $GUACAMOLE_DOWNLOAD_LINK
+	mv ${GUACAMOLE_VERSION}.tar.gz guacamole-server-${GUACAMOLE_VERSION}.tar.gz
 	tar zxf guacamole-server-${GUACAMOLE_VERSION}.tar.gz
 	rm -f guacamole-server-${GUACAMOLE_VERSION}.tar.gz
 	cd $CurrentDir/guacamole-server-$GUACAMOLE_VERSION
